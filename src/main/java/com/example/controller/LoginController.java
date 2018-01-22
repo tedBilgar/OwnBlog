@@ -29,12 +29,6 @@ public class LoginController {
 		modelAndView.setViewName("login");
 		return modelAndView;
 	}
-
-	@RequestMapping(value = "/example",method = RequestMethod.GET)
-	public String example(@RequestParam(value = "name",required = false) String name, Model model){
-		model.addAttribute("who",name);
-		return "example";
-	}
 	
 	
 	@RequestMapping(value="/registration", method = RequestMethod.GET)
@@ -77,6 +71,24 @@ public class LoginController {
 		modelAndView.setViewName("admin/home");
 		return modelAndView;
 	}
-	
+	// Собственные маппинги для прмиера
+	@RequestMapping(value = "/example",method = RequestMethod.GET)
+	public String example(@RequestParam(value = "name",required = false) String name, Model model){
+		model.addAttribute("who",name);
+		return "example";
+	}
 
+	@RequestMapping(value = "/example3",method = RequestMethod.GET)
+	public ModelAndView example3(){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("example3");
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/example4",method = RequestMethod.GET)
+	public ModelAndView example4(){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("example4");
+		return modelAndView;
+	}
 }
