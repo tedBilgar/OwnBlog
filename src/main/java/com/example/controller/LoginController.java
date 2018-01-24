@@ -114,4 +114,11 @@ public class LoginController {
 		}
 		return modelAndView;
 	}
+
+	@RequestMapping(value="/mainPage", method = RequestMethod.GET)
+	public ModelAndView mainPage(Model model){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("pages/mainPage");
+		return modelAndView;
+	}
 }

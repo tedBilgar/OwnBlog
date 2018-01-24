@@ -29,7 +29,10 @@
 				<p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
 			</div>
 		</div>
-		
+		<form th:action="@{/mainPage}" method="get">
+			<button class="btn btn-md btn-warning btn-block" type="Submit">Go to main page</button>
+		</form>
+
 	</div>
 </body>
 </html>
