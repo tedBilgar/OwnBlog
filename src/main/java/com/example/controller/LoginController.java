@@ -9,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -115,10 +116,10 @@ public class LoginController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/mainPage", method = RequestMethod.GET)
-	public ModelAndView mainPage(Model model){
+	@RequestMapping(value="/pages/{page}", method = RequestMethod.GET)
+	public ModelAndView mainPage(@PathVariable(value = "page")String page, Model model){
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("pages/mainPage");
+		modelAndView.setViewName("pages/"+page);
 		return modelAndView;
 	}
 }
