@@ -36,13 +36,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		http.
 			authorizeRequests()
-				.antMatchers("/","/example","/example3","/example4").permitAll()
+				.antMatchers("/**").permitAll()
 				.antMatchers("/login").permitAll()
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
 				.authenticated().and().csrf().disable().formLogin()
 				.loginPage("/example3").failureUrl("/example3?error=true")
-				.defaultSuccessUrl("/admin/home")
+				.defaultSuccessUrl("/pages/mainPage")
 				.usernameParameter("email")
 				.passwordParameter("password")
 				.and().logout()
