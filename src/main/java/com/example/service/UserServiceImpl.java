@@ -9,6 +9,7 @@ import java.util.Set;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,8 +26,10 @@ import com.example.repository.UserRepository;
 @Service("userService")
 public class UserServiceImpl implements UserService, UserDetailsService {
 
+	@Qualifier("userRepository")
 	@Autowired
 	private UserRepository userRepository;
+	@Qualifier("roleRepository")
 	@Autowired
 	private RoleRepository roleRepository;
 	@Autowired
