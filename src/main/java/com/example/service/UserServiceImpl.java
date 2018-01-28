@@ -26,19 +26,10 @@ import com.example.repository.UserRepository;
 @Service("userService")
 public class UserServiceImpl implements UserService, UserDetailsService {
 
+	@Autowired
 	private UserRepository userRepository;
+	@Autowired
 	private RoleRepository roleRepository;
-	@Autowired
-	public void setUserRepository(UserRepository userRepository)
-	{
-		this.userRepository = userRepository;
-	}
-
-	@Autowired
-	public void setRoleRepository(RoleRepository roleRepository)
-	{
-		this.roleRepository = roleRepository;
-	}
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
