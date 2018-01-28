@@ -26,6 +26,7 @@ import com.example.repository.RoleRepository;
 import com.example.repository.UserRepository;
 
 @Service("userService")
+@Lazy
 public class UserServiceImpl implements UserService, UserDetailsService {
 	@Autowired
 	private UserRepository userRepository;
@@ -40,7 +41,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	@Override
-	@PostConstruct
+	//@PostConstruct
 	public void saveUser(User user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setActive(true);
