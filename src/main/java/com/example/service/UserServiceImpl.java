@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,11 +26,16 @@ import com.example.repository.UserRepository;
 
 @Service("userService")
 public class UserServiceImpl implements UserService, UserDetailsService {
-
-	@Autowired
 	private UserRepository userRepository;
-	@Autowired
 	private RoleRepository roleRepository;
+	@Autowired
+	public void setUserRepository(@Lazy UserRepository userRepository){
+		this.userRepository = userRepository;
+	}
+	@Autowired
+	public void setRoleRepository(@Lazy RoleRepository roleRepository){
+		this.roleRepository = roleRepository;
+	}
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
