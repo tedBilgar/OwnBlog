@@ -41,7 +41,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	@Override
-	//@PostConstruct
 	public void saveUser(User user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setActive(true);
