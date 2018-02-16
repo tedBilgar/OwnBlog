@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>OwnBlog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demo</name>
+	<name>OwnBlog</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -52,11 +52,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/net.sourceforge.nekohtml/nekohtml -->
 		<dependency>
@@ -64,7 +59,10 @@
 			<artifactId>nekohtml</artifactId>
 			<version>1.9.21</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
-
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
+		</dependency>
 
 	</dependencies>
 

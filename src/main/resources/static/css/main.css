@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+body {
+    background-color: "white";
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #697681;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-scroller {
+    font-weight: bold;
+    font-size: 20px;
+    color: #1A252F;
+
+}
+
+.centered{
+    text-align: center;
+}
+
+#mainName{
+    font-weight: 400;
+    font-size: 20px;
+    color: #004080;
+}
+.logoCont {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    position: absolute;
+    z-index: 2;
+    top: -4rem;
+    left:-5rem;
+}
+
+hr.style14 {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #DDEBFF, #0B3E83, #DDEBFF);
+  background-image: -moz-linear-gradient(left, #DDEBFF, #0B3E83, #DDEBFF);
+  background-image: -ms-linear-gradient(left, #DDEBFF, #0B3E83, #DDEBFF);
+  background-image: -o-linear-gradient(left, #DDEBFF, #0B3E83, #DDEBFF);
+
+}
+
+hr.style13 {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.image1 {
+    position: absolute;
+    z-index: 5;
+    top: -25px;
+    left:50px;
+}
+
+.slider{
+    height: 500px;
+}
+
+.mainImage {
+    height: 300px;
+    width: 500px;
+}
+
+.drop-image {
+    position: relative;
+}
+.drop-image h2 {
+    position: absolute;
+    left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#accordion {
+    color: #F1F2F4;
+    font-weight: 200;
+}
+
+.news-header {
+    background-color: #75A3FF;
+}

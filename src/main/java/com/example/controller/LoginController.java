@@ -89,6 +89,7 @@ public class LoginController {
 	@RequestMapping(value = {"/","pages/mainPage"},method = RequestMethod.GET)
 	public ModelAndView createMainPage(Model model){
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("user", new User());
 		modelAndView.setViewName("pages/mainPage");
 		return modelAndView;
 	}
