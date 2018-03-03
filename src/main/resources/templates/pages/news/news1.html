@@ -1,0 +1,108 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Блог Ураканова Дениса</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/fontawesome-all.css}" />
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+
+<body>
+<!--НАДШАПКА-->
+
+<header class="forms pt-2">
+    <div class="container">
+        <div class="row d-flex justify-content-center col-6 offset-6" sec:authorize="isAnonymous()">
+            <div class="col-lg-3">
+                <a href="/registration" class="btn btn-outline-info btn-sm" role="button"><i class="fas fa-user"></i> Subscribe</a>
+            </div>
+            <div class="col-lg-3">
+                <a href="/login" class="btn btn-primary btn-sm" role="button"><i class="fas fa-sign-in-alt"></i> Sign in</a>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center col-6 offset-6" sec:authorize="isAuthenticated()">
+            <div id="mainName" class="row">
+                <p1>Привет,</p1>
+                <p1 class="pl-1" th:text="${user.name}"></p1>
+                <p1 class="pl-2" th:text="${user.lastName}"></p1>
+            </div>
+            <div ></div>
+        </div>
+    </div>
+</header>
+
+<hr class="style14" />
+
+<!--НАДШАПКА-->
+<!--ШАПКА-->
+<div class="nav-scroller">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand logoCont" href="#">
+                <img th:src="@{/images/logo2(1).png}" class="logo" width="170" height="auto" alt="">
+            </a>
+
+            <div class="collapse navbar-collapse row" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-lg-0 mx-auto col-6 col-offset-2">
+                    <li class="nav-item active mx-3">
+                        <a class="nav-link text-dark" href="#">ГЛАВНАЯ <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-dark" href="#">НОВОСТИ</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-dark" href="#">ПРОГРАММИРОВАНИЕ</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-dark" href="#">СПОРТ</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-lg-0 col-2 mr-4">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--ШАПКА-->
+<!--container-->
+<hr class="style13" />
+
+<div class="container-fluid bg-light">
+    <main role="main">
+        <!-- SLIDER -->
+
+
+
+    </main>
+</div>
+<footer class="container">
+    <p>&copy; Company 2017-2018</p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script th:src="@{/js/hoverCollapse.js}"></script>
+</body>
+
+</html>

@@ -34,7 +34,11 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center col-6 offset-6" sec:authorize="isAuthenticated()">
-            <p1 id="mainName">Hello</p1>
+            <div id="mainName" class="row">
+                <p1>Привет,</p1>
+                <p1 class="pl-1" th:text="${user.name}"></p1>
+                <p1 class="pl-2" th:text="${user.lastName}"></p1>
+            </div>
             <div ></div>
         </div>
     </div>
@@ -131,7 +135,7 @@
                         <div class="card-title text-center">
                             <h4>HELLO</h4>
                         </div>
-                        <a data-toggle="collapse d-flex justify-content-center" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <a data-toggle="collapse d-flex justify-content-center" data-parent="#accordion" href="/pages/news/news1" aria-expanded="true" aria-controls="collapseOne">
                             <img th:src="@{/images/p1.jpg}" class="img-fluid "/>
                         </a>
                     </div>

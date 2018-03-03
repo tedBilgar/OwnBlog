@@ -89,8 +89,20 @@ public class LoginController {
 	@RequestMapping(value = {"/","pages/mainPage"},method = RequestMethod.GET)
 	public ModelAndView createMainPage(Model model){
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("user", new User());
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		User user = userService.findUserByEmail(auth.getName());
+		modelAndView.addObject("user",user);
 		modelAndView.setViewName("pages/mainPage");
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/pages/news/{id}",method = RequestMethod.GET)
+	public ModelAndView createNewsPage(@PathVariable(value = "id")String pageId,Model model){
+		ModelAndView modelAndView = new ModelAndView();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		User user = userService.findUserByEmail(auth.getName());
+		modelAndView.addObject("user",user);
+		modelAndView.setViewName("pages/news/"+ pageId);
 		return modelAndView;
 	}
 }
